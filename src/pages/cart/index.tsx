@@ -31,7 +31,7 @@ const CartPage = () => {
   return (
     <Layout>
       <h1>Your Cart</h1>
-      <h2>current Total = €{currentTotal}</h2>
+      <h2>Current Total = €{currentTotal}</h2>
       {productsInCart.length > 0 ? (
         productsInCart.map((item: any) => {
           return <CartItem key={item.gtin} itemData={item} />;
