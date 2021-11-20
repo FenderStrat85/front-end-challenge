@@ -3,9 +3,12 @@ import { useState, useEffect } from "react";
 import apiService from "../services/apiService";
 import ProductTile from "../components/ProductTile";
 import { IProduct } from "../interfaces";
+import { useSelector } from "react-redux";
 
 const HomePage = () => {
   const [productList, setProductList] = useState<any>([]);
+  const stateData = useSelector((state) => state);
+  console.log(stateData);
 
   const getProducts = async () => {
     const page1 = await apiService.getProducts(1);

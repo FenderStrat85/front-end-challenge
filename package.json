@@ -21,9 +21,12 @@
   },
   "homepage": "https://github.com/qogita/frontend-challenge#readme",
   "dependencies": {
+    "@types/react-redux": "^7.1.20",
     "next": "^11.0.1",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "react-redux": "^7.2.6",
+    "redux": "^4.1.2"
   },
   "devDependencies": {
     "@types/react": "^17.0.15",

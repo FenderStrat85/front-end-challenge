@@ -1,4 +1,5 @@
 import { IProduct } from "../interfaces";
+import { useDispatch } from "react-redux";
 
 const ProductTile = (props: any) => {
   const {
@@ -11,8 +12,10 @@ const ProductTile = (props: any) => {
     recommendedRetailPriceCurrency,
   } = props.product;
 
+  const dispatch = useDispatch();
+
   const addToCart = (item: IProduct) => {
-    console.log(item);
+    dispatch({ type: "ADD_PRODUCT_TO_CART", payload: item });
   };
 
   return (
