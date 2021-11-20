@@ -9,7 +9,14 @@ module.exports = {
       lg: '1024px',
       xl: '1280px',
     },
-    extend: {},
+    
+    extend: {
+      colors: {
+      background: '#FEF1E6',
+      accent: '#009DAE',
+      hover: '#71DFE7'
+    },
+    },
   },
   variants: {
     extend: {},

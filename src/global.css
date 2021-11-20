@@ -1,3 +1,29 @@
 @tailwind base;
+
+@layer base {
+  strong {
+    @apply text-4xl;
+    @apply text-accent;
+  }
+  h1 {
+    @apply text-2xl;
+    @apply text-accent;
+  }
+  h2 {
+    @apply text-xl;
+    @apply text-accent;
+  }
+  h3 {
+    @apply text-lg;
+    @apply text-accent;
+  }
+  a {
+    @apply text-accent underline;
+  }
+  button {
+    @apply bg-accent hover:bg-hover text-white font-bold py-2 px-4 rounded-full;
+  }
+}
+
 @tailwind components;
 @tailwind utilities;

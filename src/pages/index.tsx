@@ -8,7 +8,6 @@ import { useSelector } from "react-redux";
 const HomePage = () => {
   const [productList, setProductList] = useState<any>([]);
   const stateData = useSelector((state) => state);
-  console.log(stateData);
 
   const getProducts = async () => {
     const page1 = await apiService.getProducts(1);
@@ -33,15 +32,15 @@ const HomePage = () => {
 
   return (
     <Layout>
-      <h1>Products</h1>
-      <div>
-        <h2>Let's see some products</h2>
-      </div>
-      {productList.length > 0
-        ? productList.map((item: IProduct) => {
-            return <ProductTile product={item}> </ProductTile>;
-          })
-        : null}
+      <strong>Products</strong>
+      <br />
+      {productList.length > 0 ? (
+        productList.map((item: IProduct) => {
+          return <ProductTile product={item}> </ProductTile>;
+        })
+      ) : (
+        <strong>We're just fetching some products for you!</strong>
+      )}
     </Layout>
   );
 };

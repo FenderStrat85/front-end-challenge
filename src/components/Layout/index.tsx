@@ -1,11 +1,11 @@
-import Link from 'next/link';
+import Link from "next/link";
 
 type Props = {
   children: React.ReactNode;
 };
 
 const Layout = ({ children }: Props) => (
-  <div className="container mx-auto px-4">
+  <div className="container mx-auto px-4 font-sans">
     <div className="flex justify-between">
       <strong>Qogita</strong>
       <nav>

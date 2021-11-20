@@ -10,7 +10,6 @@ const CartPage = () => {
   let dataFromStore: any = useSelector((state: any) => {
     return state.selectedProducts;
   });
-  console.log("data from store", dataFromStore);
 
   useEffect(() => {
     setProductsInCart(dataFromStore);
@@ -32,13 +31,13 @@ const CartPage = () => {
   return (
     <Layout>
       <h1>Your Cart</h1>
-      <h2>current Total = {currentTotal}</h2>
-      {productsInCart ? (
+      <h2>current Total = €{currentTotal}</h2>
+      {productsInCart.length > 0 ? (
         productsInCart.map((item: any) => {
           return <CartItem key={item.gtin} itemData={item} />;
         })
       ) : (
-        <h1>No products to display</h1>
+        <h1>You haven't added any products to your cart yet!</h1>
       )}
     </Layout>
   );

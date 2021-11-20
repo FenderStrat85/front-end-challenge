@@ -1,5 +1,6 @@
 import { IProduct } from "../interfaces";
 import { useDispatch } from "react-redux";
+import { useState } from "react";
 
 const ProductTile = (props: any) => {
   const {
@@ -19,14 +20,22 @@ const ProductTile = (props: any) => {
   };
 
   return (
-    <div>
-      <h1>{name}</h1>
-      <h2>{brandName}</h2>
-      <h2>{categoryName}</h2>
-      <img src={imageUrl} />
-      <h3>{recommendedRetailPrice}</h3>
-      <h3>{recommendedRetailPriceCurrency}</h3>
-      <button onClick={() => addToCart(props.product)}>Add to cart</button>
+    <div className="flex flex-row justify-between flex-end border-2 rounded-md p-2 m-5 bg-background">
+      <div>
+        <h1>{name}</h1>
+        <h2>Category: {categoryName}</h2>
+        <h3> €{recommendedRetailPrice}</h3>
+      </div>
+      <div className="p-2 flex flex-col">
+        <img
+          className="object-contain h-40 p-2 border-2 rounded-lg "
+          src={imageUrl}
+        />
+
+        <button className="m-2" onClick={() => addToCart(props.product)}>
+          Add to cart
+        </button>
+      </div>
     </div>
   );
 };
